@@ -1,26 +1,151 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* --- Neutral Palette --- */
+  --color-neutral-0: #ffffff;
+  --color-neutral-100: #f8f8f7;
+  --color-neutral-200: #e8e8e6;
+  --color-neutral-300: #deddda;
+  --color-neutral-400: #c0bfbf;
+  --color-neutral-600: #4a4d4e;
+  --color-neutral-700: #343d3e;
+  --color-neutral-800: #2d2c2d;
+  --color-neutral-900: #1c1c19;
+
+  /* --- Blue Palette --- */
+  --color-blue-200: #e1f1fe;
+  --color-blue-500: #29cfcf;
+  --color-blue-700: #2f83dc;
+  --color-blue-800: #2b78d0;
+  --color-blue-900: #202dca;
+
+  /* --- Green Palette --- */
+  --color-green-200: #ebf9fa;
+  --color-green-500: #bedca1;
+  --color-green-700: #1eb861;
+  --color-green-900: #124a1f;
+
+  /* --- Yellow Palette --- */
+  --color-yellow-200: #fef9e1;
+  --color-yellow-500: #facc79;
+  --color-yellow-700: #efa906;
+  --color-yellow-900: #4a3003;
+
+  /* --- Red Palette --- */
+  --color-red-400: #ee4f3a;
+  --color-red-800: #bc1e2f;
+
+  /* --- NEW: Define Font Families --- */
+  /* This creates 'font-sans' and 'font-mono' utilities */
+  --font-sans: var(--font-dm-sans);
+  --font-mono: var(--font-fira-code);
+
+  /* --- NEW: Define Font Weights --- */
+  /* This creates 'font-regular', 'font-medium', 'font-semibold', etc. */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+
+  --radius-0: 0;
+  --radius-4: 4px;
+  --radius-6: 6px;
+  --radius-8: 8px;
+  --radius-10: 10px;
+  --radius-12: 12px;
+  --radius-16: 16px;
+  --radius-20: 20px;
+  --radius-24: 24px;
+  --radius-full: 999px;
+}
+@utility text-preset-1 {
+  font-family: var(--font-sans);
+  font-weight: var(--font-weight-extrabold);
+  font-size: 2.5rem; /* 40px */
+  line-height: 1.3; /* 130% */
+  letter-spacing: -1px;
+}
+@utility text-preset-2 {
+  font-family: var(--font-sans);
+  font-weight: var(--font-weight-extrabold);
+  font-size: 2rem; /* 32px */
+  line-height: 1.3; /* 130% */
+  letter-spacing: -0.5px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@utility text-preset-3 {
+  font-family: var(--font-sans);
+  font-weight: var(--font-weight-bold);
+  font-size: 1.75rem; /* 28px */
+  line-height: 1.3; /* 130% */
+  letter-spacing: -0.5px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@utility text-preset-4 {
+  font-family: var(--font-sans);
+  font-weight: var(--font-weight-semibold);
+  font-size: 1.5rem; /* 24px */
+  line-height: 1.3; /* 130% */
+  letter-spacing: -0.5px;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@utility text-preset-5 {
+  font-family: var(--font-sans);
+  font-weight: var(--font-weight-semibold);
+  font-size: 1.25rem; /* 20px */
+  line-height: 1.3; /* 130% */
+  letter-spacing: -0.5px;
+}
+
+@utility text-preset-6 {
+  font-family: var(--font-sans);
+  font-weight: var(--font-weight-medium);
+  font-size: 1.125rem; /* 18px */
+  line-height: 1.5; /* 150% */
+  letter-spacing: -0.5px;
+}
+@utility text-preset-7 {
+  /* Was: Text Preset 7 */
+  font-family: var(--font-sans);
+  font-weight: var(--font-weight-regular);
+  font-size: 1.125rem; /* 18px */
+  line-height: 1.5; /* 150% */
+  letter-spacing: -0.2px;
+}
+
+@utility text-preset-7-semibold {
+  /* Was: Text Preset 7 (Semibold) */
+  font-family: var(--font-sans);
+  font-weight: var(--font-weight-semibold);
+  font-size: 1.125rem; /* 18px */
+  line-height: 1.5; /* 150% */
+  letter-spacing: -0.2px;
+}
+
+@utility text-preset-8 {
+  /* Was: Text Preset 8 */
+  font-family: var(--font-sans);
+  font-weight: var(--font-weight-regular);
+  font-size: 1rem; /* 16px */
+  line-height: 1.3; /* 130% */
+  letter-spacing: -0.2px;
+}
+
+@utility text-preset-8-italic {
+  /* Was: Text Preset 9 (Italic) */
+  font-family: var(--font-sans);
+  font-weight: var(--font-weight-regular);
+  font-style: italic;
+  font-size: 1rem; /* 16px */
+  line-height: 1.3; /* 130% */
+  letter-spacing: -0.2px;
+}
+
+@utility text-preset-9 {
+  font-family: var(--font-mono);
+  font-weight: var(--font-weight-regular);
+  font-size: 1rem; /* 16px */
+  line-height: 1.46; /* 146% */
+  letter-spacing: -0.4px;
 }
